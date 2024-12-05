@@ -89,8 +89,6 @@ public:
         sentencesArray = splitSentences(context);
         noOfSentences = sentencesArray.size();
         noOfSentencesInSummary = noOfSentences / 2;
-      //  intersectionMatrix.resize(noOfSentences, std::vector<double>(noOfSentences, 0));
-
 
         calculateIntersectionMatrix();
         calculateScores();
