@@ -98,3 +98,33 @@ public:
     }
 
 }
+ void calculateIntersectionMatrix() {
+        for (int i = 0; i < noOfSentences; i++) {
+            for (int j = 0; j < noOfSentences; j++) {
+                intersectionMatrix[i][j] = (sentences[i].getNumberOfWords() + sentences[j].getNumberOfWords()) / 2.0;
+            }
+        }
+    }
+
+    void calculateScores() {
+        for (int i = 0; i < noOfSentences; i++) {
+            double scoreTemp = 0;
+            for (int j = 0; j < noOfSentences; j++) {
+                scoreTemp += intersectionMatrix[i][j];
+            }
+            sentences[i].setScore(scoreTemp);
+            scoreOfSentences.push_back(scoreTemp);
+        }
+    }
+
+    
+    void extraction(int noOfSentencesInSummary) {
+        std::sort(scoreOfSentences.begin(), scoreOfSentences.end(), std::greater<double>());
+        double threshold = scoreOfSentences[noOfSentencesInSummary - 1];
+        
+        for (auto& s : sentences) {
+            if (s.getScore() >= threshold && !s.getSentenceString().empty()) {
+                summary += s.getSentenceString() + ".\n";
+            }
+        }
+    }
