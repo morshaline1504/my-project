@@ -84,14 +84,4 @@ public:
         extractSummary(noOfSentencesInSummary);
     }
 
-    std::vector<std::string> splitSentences(const std::string& text) {
-        std::vector<std::string> sentences;
-        std::string tempSentence;
-        std::istringstream stream(text);
-        while (std::getline(stream, tempSentence, '.')) {
-            if (!tempSentence.empty()) {
-                sentences.push_back(tempSentence);
-            }
-        }
-        return sentences;
-    }
+}
