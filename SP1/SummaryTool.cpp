@@ -7,8 +7,9 @@
 #include <cctype>
 #include <cmath>
 
-using namespace std;
 
+
+using namespace std;
 
 
 
@@ -119,14 +120,13 @@ private:
                 "\n" +
                 "It is more effective to identify what need - physical, emotional, intellectual or spiritual - is most pressing and try one technique at a time to gauge if it helps you.";
 
+
+
     vector<string> sentences;
     vector<string> textTable;
     map<string, int> frequencyCounter;
     map<string, double> sentencesScore;
     vector<string> summary;
-
-
-
 
 public:
     SummaryTool(string context) {
@@ -135,12 +135,11 @@ public:
         mainProcess();
     }
 
+
+
     void setText(string newText) {
         text = newText;
     }
-
-
-
 
     void mainProcess() {
         extractWordsFromSentence();
@@ -148,8 +147,6 @@ public:
         scoreSentences();
         generateSummary();
     }
-
-
 
     void tokenizeSentences() {
         stringstream ss(text);
@@ -183,15 +180,11 @@ public:
         }
     }
 
-
-
     void createWordFrequencyTable() {
         for (const string& word : textTable) {
             frequencyCounter[word]++;
         }
     }
-
-
 
     void scoreSentences() {
         for (const string& sentence : sentences) {
@@ -226,8 +219,6 @@ public:
         }
     }
 
-
-
     string getSummary() {
         string summaryString;
         for (const string& s : summary) {
@@ -235,6 +226,8 @@ public:
         }
         return summaryString;
     }
+
+
 
     void showSummary() {
         cout << "\n\nSummary:" << endl;
@@ -256,9 +249,12 @@ private:
         return noPunctuation;
     }
 
+
+
     int spaceCounter(const string& sample) {
         return count(sample.begin(), sample.end(), ' ');
     }
+
 
 
 
@@ -274,8 +270,6 @@ private:
             "these", "they", "this", "to", "too", "us", "was", "we", "were", "what", "when", "where", "which", "while", "who", "whom", "why", "will", "with", "would", "yet", "you", "your"
         };
 
-
-        
         int noOfNonStopWords = 0;
         while (ss >> word) {
             word = toLowerCase(word);
@@ -285,8 +279,6 @@ private:
         }
         return noOfNonStopWords;
     }
-
-
 
     string toLowerCase(const string& str) {
         string lowerStr = str;
