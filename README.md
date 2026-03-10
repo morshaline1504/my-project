@@ -1,9 +1,12 @@
 Introduction
+
+
 Text summarization is the process of generating a concise and coherent summary of a longer text while preserving its key information.
 
 
 
 Summarization Approaches
+
 The tool utilizes the following extractive approaches for text summarization:
 
 Word Frequency Algorithm: This approach ranks sentences based on the frequency of important words in each sentence. The sentences with higher frequencies of essential words are considered more relevant and are included in the summary.
