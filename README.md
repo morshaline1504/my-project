@@ -16,3 +16,6 @@ Additional Resources
 For a deeper understanding of text summarization and the algorithms used in this tool, you can refer to the following resources:
 
 Text Summarization in 5 Steps using NLTK
+
+https://becominghuman.ai/text-summarization-in-5-steps-using-nltk-65b21e352b65
+
